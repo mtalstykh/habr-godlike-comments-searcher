@@ -1,0 +1,29 @@
+{
+	"manifest_version": 2,
+	"name": "GODLICKE HABR",
+	"version": "0.0.1",
+
+	"icons": {},
+	"description": "Extension for search of godlike-comments on habr's articles",
+
+	"browser_action": {
+		"default_title": "GODLICKE HABR",
+		"default_icon": "ico.png",
+		"default_popup": "popup.html"
+	},
+
+	"author": "Maksim Talstykh",
+	"commands": {
+		"_execute_browser_action": {
+			"suggested_key": {
+				"default": "Ctrl+Shift+F",
+				"mac": "MacCtrl+Shift+F"
+			},
+			"description": "Opens popup.html"
+		}
+	},
+
+	"permissions": [
+		"http://habr.ru/*"
+	]
+}
