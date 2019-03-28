@@ -5,6 +5,7 @@ var CleanWebpackPlugin = require("clean-webpack-plugin");
 var MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
+  devtool: 'cheap-module-source-map',
   entry: "./src/index.js",
   output: {
     filename: "index.js",
