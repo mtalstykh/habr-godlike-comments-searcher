@@ -10,7 +10,7 @@
 
 	"browser_action": {
 		"default_title": "GODLICKE HABR",
-		"default_popup": "popup.html"
+		"default_popup": "index.html"
 	},
 
 	"author": "Maksim Talstykh",
@@ -20,7 +20,7 @@
 				"default": "Ctrl+Shift+H",
 				"mac": "MacCtrl+Shift+H"
 			},
-			"description": "Opens popup.html"
+			"description": "Opens extension"
 		}
 	},
 
