@@ -5,7 +5,7 @@
 
 	"description": "Extension for search of godlike-comments on habr's articles",
 	"icons": {
-		"16": "./src/images/ico_16.png"
+		"16": "./images/ico_16.png"
 	},
 
 	"browser_action": {
