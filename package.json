@@ -4,7 +4,7 @@
   "description": "Chrome extension for search of godlike-comments on habr's articles",
   "main": "index.js",
   "scripts": {
-    "start:dev": "echo \"Error: no start:dev specified\" && exit 1",
+    "start:dev": "webpack --config webpack.config.js --progress --mode=development --watch",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build:dev": "webpack --config webpack.config.js --progress --mode=development",
     "build:prod": "webpack --config webpack.config.js --progress --mode=production"
@@ -39,6 +39,7 @@
     "style-loader": "^0.23.1",
     "typescript": "^3.3.4000",
     "webpack": "^4.29.6",
-    "webpack-cli": "^3.3.0"
+    "webpack-cli": "^3.3.0",
+    "webpack-dev-server": "^3.2.1"
   }
 }
