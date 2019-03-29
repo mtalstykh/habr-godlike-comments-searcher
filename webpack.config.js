@@ -3,9 +3,14 @@ var HtmlWebpackPlugin = require("html-webpack-plugin");
 var CopyWebpackPlugin = require("copy-webpack-plugin");
 var CleanWebpackPlugin = require("clean-webpack-plugin");
 var MiniCssExtractPlugin = require("mini-css-extract-plugin");
+var webpack = require('webpack');
 
 module.exports = {
-  devtool: 'cheap-module-source-map',
+  devtool: "cheap-module-source-map",
+  devServer: {
+    contentBase: "./build",
+    writeToDisk: true,
+  },
   entry: "./src/index.js",
   output: {
     filename: "index.js",
@@ -13,6 +18,9 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(),
+    new webpack.HotModuleReplacementPlugin({
+      multiStep: true
+    }),
     new HtmlWebpackPlugin({
       template: "./src/index.html"
     }),
@@ -21,10 +29,13 @@ module.exports = {
         from: "src/manifest.json"
       },
       {
-        from: "./images",
+        from: "./src/images",
         to: "images"
       }
-    ]),
+    ],
+    {
+      copyUnmodified: true
+    }),
     new MiniCssExtractPlugin({
       filename: "[name].css",
       chunkFilename: "[id].css"
