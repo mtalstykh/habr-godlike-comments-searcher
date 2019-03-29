@@ -19,7 +19,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new webpack.HotModuleReplacementPlugin({
-      multiStep: true
+      // multiStep: true
     }),
     new HtmlWebpackPlugin({
       template: "./src/index.html"
