@@ -5,22 +5,23 @@ var CleanWebpackPlugin = require("clean-webpack-plugin");
 var MiniCssExtractPlugin = require("mini-css-extract-plugin");
 var webpack = require('webpack');
 
+const dev = process.env.NODE_ENV !== 'production';
+
 module.exports = {
   devtool: "cheap-module-source-map",
   devServer: {
     contentBase: "./build",
     writeToDisk: true,
   },
-  entry: "./src/index.js",
+  entry: "./src/index.ts",
   output: {
     filename: "index.js",
     path: path.resolve(__dirname, "build")
   },
+  mode: dev ? 'development' : 'production',
   plugins: [
     new CleanWebpackPlugin(),
-    new webpack.HotModuleReplacementPlugin({
-      // multiStep: true
-    }),
+    new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
       template: "./src/index.html"
     }),
@@ -43,6 +44,11 @@ module.exports = {
   ],
   module: {
     rules: [
+      {
+        test: /\.ts?$/,
+        loader: 'ts-loader',
+        exclude: /node_modules/
+      },
       {
         test: /\.(png|svg|jpg|gif)$/,
         use: [
